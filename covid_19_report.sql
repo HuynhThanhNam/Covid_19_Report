@@ -274,8 +274,9 @@ SELECT
     -- new_cases,
     sum(new_cases) OVER (PARTITION BY location ORDER BY location, date)  as Cases,
     ((sum(new_cases) OVER (PARTITION BY location ORDER BY location, date))/population)*100 as 'Infection Rate'	
--- export file(larg file)
-INTO OUTFILE 'D:/Studying/DA/MySQL/Portfolio/Covid-19/Tableau/infection_rate_of_countries_overtime.csv'
+    
+-- export file(large file)
+INTO OUTFILE 'D:/Learing/DA/MySQL/Portfolio/Covid-19/Tableau/infection_rate_of_countries_overtime.csv'
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 
